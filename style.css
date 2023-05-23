@@ -42,6 +42,10 @@ nav {
     background-color: #8D7B68;
     height: 100vh;
     width: 55%;
+    /* animation */
+    transform: translateX(50%);
+    opacity: 0;
+    transition: all .3s;
 }
 nav ul {
     margin-top: 3em;
@@ -56,13 +60,22 @@ li a {
     font-size: 1.125rem;
     letter-spacing: .1em;
 }
+li a:hover {
+    background-color: #3A98B9;
+    border-radius: 2px;
+}
+.active:hover {
+    color: #FFFFFF;
+}
 .active {
     color: #3A98B9;
     text-transform: uppercase;
     text-shadow: .3px .3px .3px #0f172a;
 }
 .open-nav {
-    visibility: visible;
+    visibility: unset;
+    transform: translateX(0);
+    opacity: 1;
 }
 @media (min-width: 600px){
     .open,
@@ -74,6 +87,8 @@ li a {
         height: auto;
         position: unset;
         background-color: unset;
+        opacity: 1;
+        transform: translateX(0);
     }
     ul {
         display: flex;
