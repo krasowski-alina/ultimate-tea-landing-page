@@ -4,6 +4,8 @@ body {
     font-family: 'Montserrat';
     margin: 0;
     padding: 0;
+    background-color: #F8EDE3;
+    color: #191c20;
 }
 a {
     text-decoration: none;
@@ -11,6 +13,7 @@ a {
 li {
     list-style-type: none;
 }
+
 /* Nav Bar */
 .logo {
     align-self: center;
@@ -35,13 +38,15 @@ header {
     float: right;
 }
 nav {
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
     background-color: #8D7B68;
     height: 100vh;
     width: 55%;
+    z-index: 10;
     /* animation */
     transform: translateX(50%);
     opacity: 0;
@@ -73,17 +78,92 @@ li a:hover {
     text-shadow: .3px .3px .3px #0f172a;
 }
 .open-nav {
-    visibility: unset;
+    display: block;
     transform: translateX(0);
     opacity: 1;
 }
-@media (min-width: 600px){
+/* hero section */
+.wrapper {
+    padding: 1em;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: .8em;
+}
+h1, 
+main p {
+    text-align: center;
+}
+h1 {
+    margin-bottom: 0;
+    position: relative;
+    margin-top: 1.5em;
+}
+h1::before {
+    content: '';
+    position: absolute;
+    background-color: #3A98B9;
+    height: 10%;
+    width: 50%;
+    top: -20%;
+    right: 25%;
+}
+button {
+    font-family: inherit;
+    font-weight: bold;
+    width: 100%;
+    padding: .5em;
+    margin-bottom: 1em;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.125rem;
+    border: 2px solid #3A98B9;
+    white-space: nowrap;
+}
+.browse-tea-btn {
+    background-color: #3A98B9;
+    color: #FFFFFF;
+}
+.buy-tea-btn {
+    background-color: transparent;
+}
+main p {
+    line-height: 1.4em; 
+}
+.fern {
+    background: url('fern.svg') no-repeat;
+    height: 50vh;
+    width: 70%;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    z-index: -1;
+    opacity: .1;
+}
+.plant-container {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+.plant {
+    position: absolute;
+    width: 350px;
+    right: -28%;
+    bottom: -20%;
+}
+@media (min-width: 500px){
     .open,
     .exit {
-        visibility: hidden;
+        display: none;
     }
     nav {
-        visibility: unset;
+        display: flex;
         height: auto;
         position: unset;
         background-color: unset;
@@ -92,7 +172,7 @@ li a:hover {
     }
     ul {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         margin: 0;
     }
     nav ul {
@@ -100,6 +180,25 @@ li a:hover {
     }
     li a {
         color: #0f172a;
-        padding: 1em .5em;
+        padding: 1em 0;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 1.3rem;
+        padding: .3em 1em;
+    }
+    button {
+        margin-left: 1em;
+    }
+    .btn-wrapper {
+        display: flex;
+    }
+    .plant {
+        position: absolute;
+        width: 480px;
+        right: -20%;
+        bottom: 0;
     }
 }
