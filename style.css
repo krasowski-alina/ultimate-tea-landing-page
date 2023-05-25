@@ -24,10 +24,8 @@ li {
     font-weight: bold;
 }
 header {
-    background-color: #F8EDE3;
     display: flex;
     justify-content: space-between;
-    /* overflow: hidden; */
 }
 .open {
     padding: .5em;
@@ -38,7 +36,6 @@ header {
     float: right;
 }
 nav {
-    /* visibility: hidden; */
     display: none;
     position: fixed;
     top: 0;
@@ -200,5 +197,57 @@ main p {
         width: 480px;
         right: -20%;
         bottom: 0;
+    }
+}
+@media (min-width: 850px) {
+    body {
+        background-color: #FFFFFF;
+    }
+    .left-col {
+        background-color: #F8EDE3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60%;
+        height: 100vh;
+        z-index: -10;
+    }
+    nav {
+        justify-content: flex-end;
+    }
+    .logo {
+        display: block;
+        padding: 0 2em;
+    }
+    li a,
+    .logo,
+    button{
+        font-size: 1.8rem;
+    }
+    li a:last-child {
+        margin-right: 2em;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    p {
+        width: 60%;
+        font-size: 2rem;
+    }
+    main {
+        justify-content: center;
+        height: 70vh;
+    }
+    .wrapper {
+        display: flex;
+    }
+    .plant-container {
+        position: unset;
+    }
+    .plant {
+        top: 10%;
+        right: 10%;
+        height: auto;
+        width: auto;
     }
 }
